@@ -60,7 +60,13 @@ class Jogo(models.Model):
     id_jogo = models.AutoField(primary_key=True)
     nome_jogo = models.CharField(max_length=200, null=False)
     id_criador = models.ForeignKey(Criador,models.DO_NOTHING, db_column="id_criador",blank=True ,null=True )
-    
+    id_servidor = models.ForeignKey(Servidor,models.DO_NOTHING, db_column="id_servidor",blank=True ,null=True )
+    id_plataforma = models.ForeignKey(Plataforma,models.DO_NOTHING, db_column="id_plataforma",blank=True ,null=True )
+    id_nivel = models.ForeignKey(Nivel,models.DO_NOTHING, db_column="id_nivel",blank=True ,null=True )
+    id_fase = models.ForeignKey(Fase,models.DO_NOTHING, db_column="id_fase",blank=True ,null=True )
+    id_personagem = models.ForeignKey(Personagem,models.DO_NOTHING, db_column="id_personagem",blank=True ,null=True )
+    id_usuario = models.ForeignKey(Usuario,models.DO_NOTHING, db_column="id_usuario",blank=True ,null=True )
+
     def __str__(self):
         return self.nome_jogo
     
